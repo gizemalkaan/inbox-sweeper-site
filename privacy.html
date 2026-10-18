@@ -90,11 +90,16 @@
         <li>Moves messages you select to Gmail's Trash. It never permanently deletes mail.</li>
         <li>Sends unsubscribe emails on your behalf, only when you click "Unsubscribe" and confirm.</li>
       </ul>
-      <p>The app <strong>never downloads or stores email bodies or attachments.</strong></p>
+      <p>
+        For messages the header rules cannot settle, the app also reads the <em>text</em> of the
+        email, checks it against a fixed list of phrases (for example "unsubscribe" or "order
+        number"), keeps only a few yes/no answers and counts, and discards the text. Attachments
+        and images are never downloaded. <strong>Email text is never stored.</strong>
+      </p>
 
       <h2>Where your data is stored</h2>
       <ul>
-        <li>Email headers are cached in a local SQLite database file in your user profile folder.</li>
+        <li>Email headers, scores and the derived text signals (counts and yes/no flags only) are cached in a local SQLite database file in your user profile folder.</li>
         <li>Your Google sign-in token and the app's own Google client credentials are encrypted with your operating system's secure storage (Windows DPAPI or the macOS Keychain) and saved locally.</li>
         <li>Settings are stored locally.</li>
       </ul>
@@ -104,7 +109,7 @@
       <p>The app connects only to Google:</p>
       <ul>
         <li><code>accounts.google.com</code> and <code>oauth2.googleapis.com</code> for Sign in with Google.</li>
-        <li><code>imap.gmail.com</code> to read headers and move mail to Trash.</li>
+        <li><code>imap.gmail.com</code> to read headers and message text, and to move mail to Trash.</li>
         <li><code>smtp.gmail.com</code> to send unsubscribe emails you have explicitly confirmed.</li>
       </ul>
       <p>
