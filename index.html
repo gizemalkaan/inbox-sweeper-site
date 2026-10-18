@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inbox Sweeper</title>
+    <meta
+      name="description"
+      content="Inbox Sweeper is a personal desktop app that finds spam and marketing emails in Gmail and moves them to Trash in bulk. It talks only to Google and stores everything locally."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #1a1a1a;
+        --muted: #6b7280;
+        --accent: #2563eb;
+        --border: #e5e7eb;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111318;
+          --fg: #e5e7eb;
+          --muted: #9ca3af;
+          --accent: #60a5fa;
+          --border: #2a2f3a;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.55;
+      }
+      main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 48px 16px 64px;
+      }
+      h1 {
+        font-size: 32px;
+        margin: 0 0 8px;
+      }
+      .tagline {
+        color: var(--muted);
+        font-size: 18px;
+        margin: 0 0 32px;
+      }
+      h2 {
+        font-size: 20px;
+        margin: 32px 0 8px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      a {
+        color: var(--accent);
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Inbox Sweeper</h1>
+      <p class="tagline">A personal desktop app that clears spam and marketing email out of Gmail.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li>Signs in to your Gmail with "Sign in with Google". It never sees your password.</li>
+        <li>Reads only email headers (sender, subject, date, list headers), never message bodies.</li>
+        <li>Scores each sender with simple rules: unsubscribe headers, bulk-mail flags, noreply addresses, volume.</li>
+        <li>Shows the results grouped by sender so you can move whole senders to Trash, or unsubscribe, in one go.</li>
+        <li>Never permanently deletes anything. "Delete" always means Gmail's Trash.</li>
+      </ul>
+
+      <h2>Privacy in one sentence</h2>
+      <p>
+        The app connects only to Google's own servers, stores everything on your own computer, and
+        sends nothing anywhere else. Full details on the
+        <a href="privacy.html">privacy policy</a> page.
+      </p>
+
+      <h2>Open source</h2>
+      <p>
+        Inbox Sweeper is built with Electron and TypeScript. The source code lives in this
+        repository, so you can read exactly what it does.
+      </p>
+
+      <footer>
+        <a href="privacy.html">Privacy policy</a>
+      </footer>
+    </main>
+  </body>
+</html>
