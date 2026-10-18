@@ -88,7 +88,7 @@
         <li>Reads <strong>email headers only</strong>: sender, recipient, subject, date, size, and list-management headers such as <code>List-Unsubscribe</code>, <code>Precedence</code> and <code>Auto-Submitted</code>.</li>
         <li>Reads the recipient addresses of messages in your Sent folder, so senders you have written to are never flagged.</li>
         <li>Moves messages you select to Gmail's Trash. It never permanently deletes mail.</li>
-        <li>Sends unsubscribe emails on your behalf, only when you click "Unsubscribe" and confirm.</li>
+        <li>Unsubscribes you from senders, only when you click "Unsubscribe" and confirm: either with a single one-click request to the unsubscribe link in the sender's own email, or by sending an unsubscribe email from your Gmail, or by opening the sender's page in your browser.</li>
       </ul>
       <p>
         For messages the header rules cannot settle, the app also reads the <em>text</em> of the
@@ -106,11 +106,12 @@
       <p>Nothing is uploaded to any server operated by the app's author or by any third party. Signing out, or deleting the app's data folder, removes everything.</p>
 
       <h2>Network connections</h2>
-      <p>The app connects only to Google:</p>
+      <p>The app connects only to Google, with one exception described below:</p>
       <ul>
         <li><code>accounts.google.com</code> and <code>oauth2.googleapis.com</code> for Sign in with Google.</li>
         <li><code>imap.gmail.com</code> to read headers and message text, and to move mail to Trash.</li>
         <li><code>smtp.gmail.com</code> to send unsubscribe emails you have explicitly confirmed.</li>
+        <li>The exception: when you confirm an unsubscribe and the sender supports the standard "one-click" method, the app sends one request to the unsubscribe link in that sender's own email. This is the same thing Gmail's Unsubscribe button does. No cookies, nothing else is sent, and the sender learns nothing it did not already know.</li>
       </ul>
       <p>
         There is no analytics, no crash reporting, no automatic update check, and no telemetry of any
