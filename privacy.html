@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Inbox Sweeper Privacy Policy</title>
-    <meta name="description" content="Privacy policy for the Inbox Sweeper desktop app." />`n    <meta name="robots" content="noindex" />
+    <meta name="description" content="Privacy policy for the Inbox Sweeper desktop app." />
+    `n
+    <meta name="robots" content="noindex" />
     <style>
       :root {
         color-scheme: light dark;
@@ -27,7 +29,12 @@
         margin: 0;
         background: var(--bg);
         color: var(--fg);
-        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
         line-height: 1.55;
       }
       main {
@@ -83,47 +90,92 @@
       </p>
 
       <h2>What the app accesses</h2>
-      <p>When you sign in with Google, the app asks for permission to use Gmail over IMAP and SMTP. With that permission it:</p>
+      <p>
+        When you sign in with Google, the app asks for permission to use Gmail over IMAP and SMTP.
+        With that permission it:
+      </p>
       <ul>
-        <li>Reads <strong>email headers only</strong>: sender, recipient, subject, date, size, and list-management headers such as <code>List-Unsubscribe</code>, <code>Precedence</code> and <code>Auto-Submitted</code>.</li>
-        <li>Reads the recipient addresses of messages in your Sent folder, so senders you have written to are never flagged.</li>
+        <li>
+          Reads <strong>email headers only</strong>: sender, recipient, subject, date, size, and
+          list-management headers such as <code>List-Unsubscribe</code>, <code>Precedence</code> and
+          <code>Auto-Submitted</code>.
+        </li>
+        <li>
+          Reads the recipient addresses of messages in your Sent folder, so senders you have written
+          to are never flagged.
+        </li>
         <li>Moves messages you select to Gmail's Trash. It never permanently deletes mail.</li>
-        <li>Unsubscribes you from senders, only when you click "Unsubscribe" and confirm: either with a single one-click request to the unsubscribe link in the sender's own email, or by sending an unsubscribe email from your Gmail, or by opening the sender's page in your browser.</li>
-        <li>Sends data-erasure requests (GDPR Article 17) to senders you choose, as ordinary emails from your own Gmail address, only when you tick that option while deleting.</li>
+        <li>
+          Unsubscribes you from senders, only when you click "Unsubscribe" and confirm: either with
+          a single one-click request to the unsubscribe link in the sender's own email, or by
+          sending an unsubscribe email from your Gmail, or by opening the sender's page in your
+          browser.
+        </li>
+        <li>
+          Sends data-erasure requests (GDPR Article 17) to senders you choose, as ordinary emails
+          from your own Gmail address, only when you tick that option while deleting.
+        </li>
       </ul>
       <p>
         For messages the header rules cannot settle, the app also reads the <em>text</em> of the
         email, checks it against a fixed list of phrases (for example "unsubscribe" or "order
-        number"), keeps only a few yes/no answers and counts, and discards the text. Attachments
-        and images are never downloaded. <strong>Email text is never stored.</strong>
+        number"), keeps only a few yes/no answers and counts, and discards the text. Optionally, a
+        small language model that runs entirely on your own computer reads the text too and answers
+        one question: marketing or personal. That answer is the only thing kept. Attachments and
+        images are never downloaded.
+        <strong>Email text is never stored, and never leaves your computer.</strong>
       </p>
 
       <h2>Where your data is stored</h2>
       <ul>
-        <li>Email headers, scores and the derived text signals (counts and yes/no flags only) are cached in a local SQLite database file in your user profile folder.</li>
-        <li>Your Google sign-in token and the app's own Google client credentials are encrypted with your operating system's secure storage (Windows DPAPI or the macOS Keychain) and saved locally.</li>
+        <li>
+          Email headers, scores and the derived text signals (counts and yes/no flags only) are
+          cached in a local SQLite database file in your user profile folder.
+        </li>
+        <li>
+          Your Google sign-in token and the app's own Google client credentials are encrypted with
+          your operating system's secure storage (Windows DPAPI or the macOS Keychain) and saved
+          locally.
+        </li>
         <li>Settings are stored locally.</li>
       </ul>
-      <p>Nothing is uploaded to any server operated by the app's author or by any third party. Signing out, or deleting the app's data folder, removes everything.</p>
+      <p>
+        Nothing is uploaded to any server operated by the app's author or by any third party.
+        Signing out, or deleting the app's data folder, removes everything.
+      </p>
 
       <h2>Network connections</h2>
       <p>The app connects only to Google, with one exception described below:</p>
       <ul>
-        <li><code>accounts.google.com</code> and <code>oauth2.googleapis.com</code> for Sign in with Google.</li>
-        <li><code>imap.gmail.com</code> to read headers and message text, and to move mail to Trash.</li>
-        <li><code>smtp.gmail.com</code> to send unsubscribe emails you have explicitly confirmed.</li>
-        <li>The exception: when you confirm an unsubscribe and the sender supports the standard "one-click" method, the app sends one request to the unsubscribe link in that sender's own email. This is the same thing Gmail's Unsubscribe button does. No cookies, nothing else is sent, and the sender learns nothing it did not already know.</li>
+        <li>
+          <code>accounts.google.com</code> and <code>oauth2.googleapis.com</code> for Sign in with
+          Google.
+        </li>
+        <li>
+          <code>imap.gmail.com</code> to read headers and message text, and to move mail to Trash.
+        </li>
+        <li>
+          <code>smtp.gmail.com</code> to send unsubscribe emails you have explicitly confirmed.
+        </li>
+        <li>
+          The exception: when you confirm an unsubscribe and the sender supports the standard
+          "one-click" method, the app sends one request to the unsubscribe link in that sender's own
+          email. This is the same thing Gmail's Unsubscribe button does. No cookies, nothing else is
+          sent, and the sender learns nothing it did not already know.
+        </li>
       </ul>
       <p>
-        There is no analytics, no crash reporting, no automatic update check, and no telemetry of any
-        kind. The source code contains a guard that refuses any HTTPS request to a non-Google host.
+        There is no analytics, no crash reporting, no automatic update check, and no telemetry of
+        any kind. The source code contains a guard that refuses any HTTPS request to a non-Google
+        host.
       </p>
 
       <h2>Use of Google user data</h2>
       <p>
         Inbox Sweeper's use and transfer of information received from Google APIs adheres to the
-        <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>,
-        including the Limited Use requirements. Gmail data is used solely to provide the features
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener"
+          >Google API Services User Data Policy</a
+        >, including the Limited Use requirements. Gmail data is used solely to provide the features
         described above, is never sold, never used for advertising, and never shared with any third
         party. No human other than you ever reads it.
       </p>
@@ -132,11 +184,16 @@
       <p>
         You can sign out inside the app, which revokes the token at Google and deletes it locally.
         You can also remove Inbox Sweeper at any time from
-        <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.
+        <a href="https://myaccount.google.com/permissions" rel="noopener"
+          >myaccount.google.com/permissions</a
+        >.
       </p>
 
       <h2>Changes to this policy</h2>
-      <p>If this policy changes, the updated version will be published at this address with a new date.</p>
+      <p>
+        If this policy changes, the updated version will be published at this address with a new
+        date.
+      </p>
 
       <footer>
         <a href="index.html">Back to Inbox Sweeper</a>
